@@ -19,12 +19,14 @@
 
 <title>Online Shopping- ${Home}</title>
 <script>
-window.menu = '${title}';
-
+	window.menu = '${title}';
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap redable theme -->
+<link href="${css}/bootstrap-sketchy-theme.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -32,28 +34,31 @@ window.menu = '${title}';
 </head>
 
 <body>
+	<div class="container">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
-	<!-- loading home page -->
-	<c:if test=${userClickHome ==true }>
-		<%@include file="home.jsp"%>
-	</c:if>
-	<!-- loading about page when user clicks about -->
-	<c:if test=${userClickAbout ==true }>
-		<%@include file="about.jsp"%>
-	</c:if>
-	<!-- loading contact page when user clicks Contact -->
-	<c:if test=${userClickContact ==true }>
-		<%@include file="contact.jsp"%>
-	</c:if>
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<script src="${js}/bootstrap.min.js"></script>
-	<script src="${js}/myapp.js"></script>
-
+		<div class="content">
+			<!-- loading home page -->
+			<c:if test=${userClickHome ==true }>
+				<%@include file="home.jsp"%>
+			</c:if>
+			<!-- loading about page when user clicks about -->
+			<c:if test=${userClickAbout ==true }>
+				<%@include file="about.jsp"%>
+			</c:if>
+			<!-- loading contact page when user clicks Contact -->
+			<c:if test=${userClickContact ==true }>
+				<%@include file="contact.jsp"%>
+			</c:if>
+		</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/bootstrap.min.js"></script>
+		<script src="${js}/myapp.js"></script>
+	</div>
 </body>
 
 </html>
